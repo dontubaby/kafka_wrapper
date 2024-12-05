@@ -1,4 +1,4 @@
-package kafka_wr
+package kafka_wrapper
 
 import (
 	"context"
