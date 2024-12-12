@@ -29,7 +29,7 @@ func (c *Consumer) GetMessages(ctx context.Context) (kafka.Message, error) {
 	msg, err := c.reader.ReadMessage(ctx)
 	if err != nil {
 		log.Printf("cant reading message from Kafka - %v\n", err)
-
+		return kafka.Message{}, err
 	}
 	log.Printf("Received message from Kafka: %s\n", string(msg.Value))
 	// Process the received message here...
